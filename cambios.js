@@ -1,6 +1,10 @@
-const puppeteer = require('puppeteer');
 
-// URL de la página a monitorear
+function init() {
+    const puppeteer = require('puppeteer');
+    console.log("La página se ha cargado.");
+    // Aquí puedes colocar tu código que deseas ejecutar al cargar la página
+
+    // URL de la página a monitorear
 const url = 'https://www.dian.gov.co/dian/ventasremates/Paginas/donaciones.aspx';
 
 // Función para verificar cambios en la página
@@ -46,7 +50,7 @@ function sendNotification(message) {
 // Función principal
 async function main() {
     console.log('Monitoreando cambios en la página...');
-    document.write('Monitoreando Cambios en la página...');
+    // document.write('Monitoreando Cambios en la página...');
     let currentData = await checkWebsite(url);
 
     setInterval(async () => {
@@ -68,3 +72,7 @@ function arraysEqual(arr1, arr2) {
 
 // Iniciar el monitoreo
 main().catch(console.error);
+}
+
+// Llama a la función de inicialización cuando se cargue la página
+window.onload = init;
