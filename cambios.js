@@ -9,7 +9,7 @@ const url = 'https://www.dian.gov.co/dian/ventasremates/Paginas/donaciones.aspx'
 
 // Función para verificar cambios en la página
 async function checkWebsite(url) {
-    const browser = await puppeteer.launch();
+    // const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
 
